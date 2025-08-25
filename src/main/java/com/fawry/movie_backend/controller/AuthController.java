@@ -8,7 +8,7 @@ import com.fawry.movie_backend.repository.UserRepository;
 
 @RestController
 @RequestMapping("/api/auth")
-@CrossOrigin(origins = "http://localhost:4200") // allow Angular
+@CrossOrigin(origins = "http://localhost:4200")
 
 public class AuthController {
 
@@ -16,7 +16,6 @@ public class AuthController {
     private UserRepository userRepository;
 
 
-    // Register (default USER role)
     @PostMapping("/register")
     public User register(@RequestBody User user) {
         user.setRole("USER");
@@ -24,7 +23,6 @@ public class AuthController {
     }
 
 
-    // Login
     @PostMapping("/login")
     public Object login(@RequestBody User loginData) {
         User user = userRepository.findByUsername(loginData.getUsername());
@@ -33,7 +31,6 @@ public class AuthController {
             return "Invalid username or password";
         }
 
-        // return only safe info
         return new AuthResponse(user.getUsername(), user.getRole());
     }
     

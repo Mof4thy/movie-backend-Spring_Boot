@@ -5,29 +5,20 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.persistence.Column;
 
-// tell jpa that this is a table
 @Entity
 @Table(name = "movies")
 public class Movie {
 
-    // 🔹 columns
-    // tell jpa that this is the primary key
     @Id
-    private String imdbID;    // IMDB ID as primary key    
+    private String imdbID;
     private String title;
     
     @Column(name = "movie_year")
     private String year;
     private String type;
-
     private String poster;
 
-    // 🔹 default constructor (required by JPA)
     public Movie() {}
-
-    // 🔹 getters and setters
-    //Java keeps variables private (can't be touched from outside).
-    //Getters and setters are like controlled access doors.
 
     
     public String getImdbID() { return imdbID; }
