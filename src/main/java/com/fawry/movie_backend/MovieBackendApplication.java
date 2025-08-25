@@ -22,7 +22,7 @@ public class MovieBackendApplication {
             if (userRepository.findByUsername("admin") == null) {
                 User admin = new User();
                 admin.setUsername("admin");
-                admin.setPassword("admin@123"); // simple password for demo
+                admin.setPassword("admin123"); // simple password for demo
                 admin.setRole("ADMIN");
                 userRepository.save(admin);
             }
