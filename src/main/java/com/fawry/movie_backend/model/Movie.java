@@ -7,10 +7,11 @@ import jakarta.persistence.Column;
 
 @Entity
 @Table(name = "movies")
-public class Movie {
 
+public class Movie {
     @Id
     private String imdbID;
+
     private String title;
     
     @Column(name = "movie_year")
@@ -18,7 +19,7 @@ public class Movie {
     private String type;
     private String poster;
 
-    public Movie() {}
+    public Movie() {}   
 
     
     public String getImdbID() { return imdbID; }

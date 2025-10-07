@@ -11,7 +11,6 @@ import com.fawry.movie_backend.repository.UserRepository;
 
 @SpringBootApplication
 public class MovieBackendApplication {
-
 	public static void main(String[] args) {
 		SpringApplication.run(MovieBackendApplication.class, args);
 	}
@@ -22,7 +21,7 @@ public class MovieBackendApplication {
             if (userRepository.findByUsername("admin") == null) {
                 User admin = new User();
                 admin.setUsername("admin");
-                admin.setPassword("admin123"); // simple password for demo
+                admin.setPassword("admin123"); 
                 admin.setRole("ADMIN");
                 userRepository.save(admin);
             }
@@ -30,3 +29,8 @@ public class MovieBackendApplication {
     }
 	
 }
+
+
+
+
+
